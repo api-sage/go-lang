@@ -13,3 +13,14 @@ func ReverseString(strings []string) []string {
 	}
 	return out
 }
+
+func PopString(strings []string, removeItem string) (string, []string) {
+	var out []string
+	for _, item := range strings {
+		if item != removeItem {
+			out = append(out, item)
+		}
+	}
+
+	return removeItem, out
+}
