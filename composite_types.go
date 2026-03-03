@@ -43,7 +43,14 @@ func PopItemOnStack(stack []string) (string, []string) {
 }
 
 func RemoveItemFromStack(stack []string, itemIndex int) (string, []string) {
+	itemValue := stack[itemIndex]
 	copy(stack[itemIndex:], stack[itemIndex+1:])
 	updatedSlice := stack[:len(stack)-1]
-	return stack[itemIndex], updatedSlice
+	return itemValue, updatedSlice
+}
+
+func RemoveItemFromStackV2(stack []string, itemIndex int) (string, []string) {
+	itemValue := stack[itemIndex]
+	stack[itemIndex] = stack[len(stack)-1]
+	return itemValue, stack[:len(stack)-1]
 }
