@@ -24,6 +24,7 @@ func PopString(strings []string, removeItem string) (string, []string) {
 			hasString = true
 		}
 	}
+	fmt.Println("Underlaying array capacity :: ", cap(out))
 
 	if !hasString {
 		return removeItem + " does not exist in slice", strings
@@ -37,5 +38,6 @@ func PopItemOnStack(stack []string) (string, []string) {
 		return "", stack
 	}
 	stackSlice := stack[:len(stack)-1]
+	fmt.Println("Underlaying array capacity :: ", cap(stackSlice))
 	return stack[len(stack)-1], stackSlice
 }
