@@ -16,10 +16,17 @@ func ReverseString(strings []string) []string {
 
 func PopString(strings []string, removeItem string) (string, []string) {
 	var out []string
+	hasString := false
 	for _, item := range strings {
 		if item != removeItem {
 			out = append(out, item)
+		} else {
+			hasString = true
 		}
+	}
+
+	if !hasString {
+		return removeItem + " does not exist in slice", strings
 	}
 
 	return removeItem, out
