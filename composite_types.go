@@ -24,3 +24,11 @@ func PopString(strings []string, removeItem string) (string, []string) {
 
 	return removeItem, out
 }
+
+func PopItemOnStack(stack []string) (string, []string) {
+	if len(stack) == 0 {
+		return "", stack
+	}
+	stackSlice := stack[:len(stack)-1]
+	return stack[len(stack)-1], stackSlice
+}
