@@ -41,3 +41,9 @@ func PopItemOnStack(stack []string) (string, []string) {
 	fmt.Println("Underlaying array capacity :: ", cap(stackSlice))
 	return stack[len(stack)-1], stackSlice
 }
+
+func RemoveItemFromStack(stack []string, itemIndex int) (string, []string) {
+	copy(stack[itemIndex:], stack[itemIndex+1:])
+	updatedSlice := stack[:len(stack)-1]
+	return stack[itemIndex], updatedSlice
+}
